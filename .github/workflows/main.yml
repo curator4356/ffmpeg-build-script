@@ -3,7 +3,7 @@ name: Build & Release Static FFmpeg on macOS ARM
 on:
   push:
     branches:
-      - main
+      - master
 
 permissions:
   contents: write
