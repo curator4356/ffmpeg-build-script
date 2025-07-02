@@ -397,42 +397,16 @@ execute ./configure \
   --disable-ffprobe \
   --enable-ffmpeg \
   \
-  --enable-decoder=h264 \
-  --enable-decoder=hevc \
-  --enable-decoder=vp8 \
-  --enable-decoder=vp9 \
-  --enable-decoder=av1 \
-  --enable-decoder=mpeg4 \
-  --enable-decoder=mjpeg \
-  --enable-decoder=png \
+  --enable-decoder=h264,hevc,vp8,vp9,av1,mpeg4,mjpeg,png \
+  --enable-demuxer=mov,mp4,avi,webm,matroska,mjpeg \
+  --enable-encoder=gif,png \
+  --enable-muxer=gif,image2 \
+  --enable-filter=scale,fps,trim,setpts,reverse,concat,split,palettegen,paletteuse \
   \
-  --enable-demuxer=mov \
-  --enable-demuxer=mp4 \
-  --enable-demuxer=avi \
-  --enable-demuxer=webm \
-  --enable-demuxer=matroska \
-  --enable-demuxer=mjpeg \
-  \
-  --enable-encoder=gif \
-  --enable-encoder=png \
-  \
-  --enable-muxer=gif \
-  --enable-muxer=image2 \
-  \
-  --enable-filter=scale \
-  --enable-filter=fps \
-  --enable-filter=trim \
-  --enable-filter=setpts \
-  --enable-filter=reverse \
-  --enable-filter=concat \
-  --enable-filter=split \
-  --enable-filter=palettegen \
-  --enable-filter=paletteuse \
-  \
-  --enable-protocol=file \
-  \
-  --disable-autodetect \
-  --disable-everything
+  --disable-network \
+  --disable-devices \
+  --disable-programs \
+  --enable-ffmpeg
 
 execute make -j $MJOBS
 execute make install
